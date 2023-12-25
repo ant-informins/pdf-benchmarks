@@ -1,10 +1,6 @@
 ﻿using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace pdf_benchmarks
 {
@@ -13,7 +9,8 @@ namespace pdf_benchmarks
         static void Main(string[] args)
         {
             var config = DefaultConfig.Instance.WithOptions(ConfigOptions.DisableOptimizationsValidator);
-            var summary = BenchmarkRunner.Run<SimplePrintTest>(config);
+            var summary = BenchmarkRunner.Run<PdfComparisonBenchmark>(config);
+            
             Console.ReadLine();
         }
     }
