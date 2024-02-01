@@ -9,8 +9,13 @@ namespace pdf_benchmarks
         static void Main(string[] args)
         {
             var config = DefaultConfig.Instance.WithOptions(ConfigOptions.DisableOptimizationsValidator);
-            var summary = BenchmarkRunner.Run<PdfComparisonBenchmark>(config);
-            
+
+            ////to compare work of different libs
+            //var summary = BenchmarkRunner.Run<PdfComparisonBenchmark>(config);
+
+            //to test PersitsPdf
+            var summary = BenchmarkRunner.Run<PdfPersitsBenchmark>(config);
+
             Console.ReadLine();
         }
     }
